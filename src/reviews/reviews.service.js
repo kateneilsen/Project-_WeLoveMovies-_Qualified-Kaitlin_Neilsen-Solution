@@ -7,13 +7,6 @@ const addCritic = mapProperties({
   organization_name: "critic.organization_name",
 });
 
-function addCritics() {
-  return knex("critics as c")
-    .select("*")
-    .where({ "c.critic_id": criticId })
-    .first();
-}
-
 function read(reviewId) {
   return knex("reviews").select("*").where({ review_id: reviewId }).first();
 }
