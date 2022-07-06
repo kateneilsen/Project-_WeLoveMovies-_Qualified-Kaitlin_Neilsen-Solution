@@ -16,8 +16,9 @@ function list() {
 function listMoviesShowing() {
   return knex("movies as m")
     .join("movies_theaters as mt", "m.movie_id", "mt.movie_id")
-    .select("m.*")
-    .where({ "mt.is_showing": true });
+    .select("m.*", "mt.is_showing")
+    .where({ "mt.is_showing": true })
+    .distinct("mt.is_showing");
 }
 
 function read(movieId) {
@@ -38,7 +39,7 @@ function readMovieReviews(movieId) {
     .join("critics as c", "r.critic_id", "c.critic_id")
     .select("*")
     .where({ "m.movie_id": movieId })
-    .then(addCritic);
+    .then((reviews) => reviews.map(addCritic));
 }
 
 module.exports = {

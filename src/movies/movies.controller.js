@@ -9,6 +9,7 @@ async function movieExists(req, res, next) {
   }
   next({ status: 404, message: `Movie cannot be found.` });
 }
+
 function read(req, res) {
   const { movie: data } = res.locals;
   res.json({ data });
