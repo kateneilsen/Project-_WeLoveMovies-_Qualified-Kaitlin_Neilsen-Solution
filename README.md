@@ -2,7 +2,7 @@
 
 **Backend Development Capstone project for Thinkful Software Engineering Flex**
 
-**Deployed at:** [https://warm-citadel-37412.herokuapp.com/](https://we-3lpx.onrender.com/movies)
+**Deployed at:** [https://we-3lpx.onrender.com/movies](https://we-3lpx.onrender.com/movies)
 ## Project Overview
 
 Created a database and RESTful API with CRUD operations that allows users to access data about movies, theaters, and reviews.
